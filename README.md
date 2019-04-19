@@ -12,12 +12,19 @@ For test I use the components below:
      
 2- Home Made Board with and H bridge mosfet, any comercial H bridge board will work. 
 
-3- Blue Pill, with a basic DC servo control algoritm.
+3- Blue Pill, with a basic DC servo control algoritm based on PID control.
    - Timer2 to use as encoder input.
    - Timer4 to use as PWM signals for H bridge.
    - B12, B13, B14 used as inputs for step, dir, enable signals.
    
  4-Software control, GRBL on arduino UNO or Mach 3.
+  
+ 
+ FILES:
+ 
+ DC Servo Eclipse: Is the file used to program Blue Pill. I Use Eclipse compiler, if you use this only need to modify the PID values according your aplication.
+ 
+ Is a precompiled firmware Hex file on DEBUG Folder.
  
  
  
