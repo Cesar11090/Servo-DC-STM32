@@ -23,19 +23,22 @@ For test I use the components below:
  
  Is a precompiled firmware Hex file on DEBUG Folder.
  
- Theory of operation:
+ DC Servo Eclipse / New Folder: Proteus schematic, is not for simulation because Proteus can't simulate interrups for PWM signals and encoder.
+
  
-The code is generated on Eclipse, use STM3  CubeMX to generate the basic code.
+THEORY OF OPERATION:
+ 
+The code is generated on Eclipse, use STM32  CubeMX to generate the basic code.
 
 The blue pill, used:
-- timer2 to read directly from encoder, A and B signals.
-- timer 4 B9,B8 to generate PWM signals for High side of the bridge. Frecuency 2kHz.
+- timer2 to read directly from encoder, A and B signals, 5 Volts tolerant pins.
+- timer4 B9 and B8 to generate PWM signals for High side of the bridge. Frecuency aprox. 2kHz.
 - B6 and B7 as output to control low side of the bridge.
 - B12,B13 and B14 as input. Step, Dir and Enable signals.
 
 The H Bridge board.
 - 20Vdc input.
-- LM7805 to reduce the input voltaje to +5V to Blue Phill.
+- LM7805 to reduce the input voltaje to +5V to Blue Pill.
 - 74HC14 use to conect the blue pill to the Mosfet N Channel.
 - J380 P channel mosfet used for high leg, H Bridge. Use an N channel mosfet to drive the gate.
 - P30NS15LFP N channel mosfet used for low leg, H Bridge. Use 74HC14 to drive the gate.
@@ -51,7 +54,7 @@ The enable signal force 0 PWM and stop motor on brake mode.
 
 Important: You need to verify the Servo is on position (Green LED on Blue Pill) as the same time the pulses from controller is off. If no the motor will be running because the cummulative pulses is not cero (The pulses is faster than motor. In my case to match the pulses the maximum velocity is 1500 rpm @20VDC, I think need to increase voltaje to increase velocity, but I don't need to test)
 
-
+Thanks.
 
  
  
